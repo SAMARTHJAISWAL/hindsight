@@ -18,7 +18,7 @@ You need Node 18 or newer. There's nothing to install and nothing to sign up for
 
 ## What you get
 
-This is the recap for a made-up year of history ([`test/fixtures/sample_year`](test/fixtures/sample_year)):
+This is the recap for a made-up year of history ([`test/fixtures/sample_year`](test/fixtures/sample_year)), run in UTC. Time-of-day figures follow your own time zone:
 
 ```
   hindsight · your 2026 in the terminal
