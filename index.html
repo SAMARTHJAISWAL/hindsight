@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hindsight — your year in the terminal</title>
+  <meta name="description" content="A private, shareable recap of your shell history: top commands, typos, night-owl hours and your terminal personality. Nothing leaves your computer.">
+  <meta property="og:title" content="hindsight — your year in the terminal">
+  <meta property="og:description" content="Top commands, your favourite typo, your busiest hour and your terminal personality. Private: nothing leaves your computer.">
+  <meta property="og:image" content="https://hindsight-lilac-beta.vercel.app/og.png">
+  <meta property="og:url" content="https://hindsight-lilac-beta.vercel.app/">
+  <link rel="canonical" href="https://hindsight-lilac-beta.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23170f2b'/%3E%3Ctext x='6' y='22' font-family='monospace' font-weight='bold' font-size='16' fill='%23ff5fa2'%3E%3E_%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero" id="hero">
+    <p class="kicker">&gt;_ hindsight</p>
+    <h1>Your year in the terminal.</h1>
+    <p class="pitch">Your top commands, your favourite typo, your busiest hour, and your terminal personality, as a card you can share. Your history never leaves your computer.</p>
+    <div class="run">
+      <code id="cmd">npx github:SAMARTHJAISWAL/hindsight --card</code>
+      <button id="copy-cmd" type="button">Copy</button>
+    </div>
+    <p class="small">Needs Node 18 or later. Works with zsh, bash, fish and PowerShell.</p>
+  </header>
+
+  <main>
+    <section id="card-view" class="card-view" hidden>
+      <canvas id="card" width="1080" height="1350" aria-label="Your hindsight card"></canvas>
+      <div class="actions">
+        <button id="download" type="button">Download image</button>
+        <button id="copy-text" type="button" class="ghost">Copy text</button>
+        <a id="post" class="ghost button" target="_blank" rel="noopener">Post on X</a>
+      </div>
+      <p class="small center" id="mine"><a href="./">Make your own →</a></p>
+    </section>
+
+    <section id="paste-view" class="paste">
+      <h2>No Node? Paste your history instead.</h2>
+      <p class="small">It's processed right here in your browser. Nothing is uploaded.</p>
+      <ol class="steps">
+        <li>Copy your history. On a Mac: <code>pbcopy &lt; ~/.zsh_history</code> (zsh) or <code>pbcopy &lt; ~/.bash_history</code> (bash). On Linux, open the same file in an editor. On Windows PowerShell: <code>Get-Content (Get-PSReadLineOption).HistorySavePath | Set-Clipboard</code></li>
+        <li>Paste it below, or drop the file here.</li>
+      </ol>
+      <textarea id="paste" placeholder="Paste or drop your history file here" spellcheck="false"></textarea>
+      <div class="actions">
+        <button id="make" type="button">Make my card</button>
+        <label class="ghost button">Choose file<input id="file" type="file" hidden></label>
+      </div>
+      <p class="status" id="status" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/SAMARTHJAISWAL/hindsight">github.com/SAMARTHJAISWAL/hindsight</a> · MIT · no tracking, no uploads
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
