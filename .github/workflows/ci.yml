@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: test (${{ matrix.os }}, Node ${{ matrix.node }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, node: "18" }
+          - { os: ubuntu-latest, node: "20" }
+          - { os: ubuntu-latest, node: "24" }
+          - { os: macos-latest, node: "24" }
+          - { os: windows-latest, node: "24" }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --test test/hindsight.test.js test/cli.test.js
+      - run: node scripts/build.mjs
+      - name: Run it the way people will
+        shell: bash
+        run: |
+          npm pack --silent
+          npx --yes ./hindsight-*.tgz --file test/fixtures/zsh_extended --year 2026 --no-color

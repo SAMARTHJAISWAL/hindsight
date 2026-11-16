@@ -1,0 +1,15 @@
+{
+  "name": "hindsight",
+  "version": "0.1.0",
+  "description": "Your year in the terminal: a private, shareable recap of your shell history. Top commands, typos, night-owl hours, and your terminal personality.",
+  "type": "module",
+  "license": "MIT",
+  "bin": { "hindsight": "bin/hindsight.js" },
+  "files": ["bin", "src"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test test/hindsight.test.js test/cli.test.js",
+    "build": "node scripts/build.mjs"
+  },
+  "keywords": ["shell", "zsh", "bash", "fish", "terminal", "history", "wrapped", "year-in-review", "cli"]
+}

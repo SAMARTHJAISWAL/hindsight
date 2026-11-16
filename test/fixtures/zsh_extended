@@ -1,0 +1,11 @@
+: 1767225600:0;git status
+: 1767225660:0;git add . && git commit -m "first"
+: 1767229200:0;gti status
+: 1767232800:0;ls -la | grep foo | sort | uniq -c | head
+: 1767232900:0;cd ~/code
+: 1767240000:0;echo one \
+two
+: 1767312000:0;sudo !!
+: 1767312060:0;rm -rf build
+: 1767398400:0;OPENAI_API_KEY=sk-abcdefghijklmnopqrstuvwx python3 app.py
+: 1735689600:0;git log
