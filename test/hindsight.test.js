@@ -16,6 +16,14 @@ test("zsh extended history, with a continued line", async () => {
   assert.equal(detect(await fixture("zsh_extended")), "zsh");
 });
 
+test("Windows line endings read the same", async () => {
+  for (const name of ["zsh_extended", "bash_timestamps", "fish_history"]) {
+    const text = await fixture(name);
+    const crlf = text.replace(/\r?\n/g, "\r\n");
+    assert.deepEqual(parse(crlf).map((e) => e.cmd), parse(text).map((e) => e.cmd), name);
+  }
+});
+
 test("plain zsh history has no timestamps", () => {
   const e = parseZsh("pwd\nls -la\n\npython3 --version\n");
   assert.deepEqual(e.map((x) => x.cmd), ["pwd", "ls -la", "python3 --version"]);

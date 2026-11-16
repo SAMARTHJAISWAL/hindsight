@@ -45,6 +45,7 @@ const seconds = (s) => {
 
 /** zsh: plain lines, or the extended form ": 1700000000:0;command". */
 export function parseZsh(text) {
+  text = text.replace(/\r\n/g, "\n");
   const out = [];
   for (const entry of joinContinued(text.split("\n"), "\\")) {
     const m = /^: (\d+):\d+;([\s\S]*)$/.exec(entry);
@@ -56,6 +57,7 @@ export function parseZsh(text) {
 
 /** bash: plain lines, each optionally preceded by "#1700000000" (HISTTIMEFORMAT). */
 export function parseBash(text) {
+  text = text.replace(/\r\n/g, "\n");
   const out = [];
   let time = null;
   for (const line of text.split("\n")) {
@@ -72,6 +74,7 @@ export function parseBash(text) {
 
 /** fish: a YAML-like list of "- cmd: ..." entries with "when:" stamps. */
 export function parseFish(text) {
+  text = text.replace(/\r\n/g, "\n");
   const out = [];
   let current = null;
   for (const line of text.split("\n")) {

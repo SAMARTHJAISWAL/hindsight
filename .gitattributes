@@ -1,0 +1,2 @@
+# keep test histories byte-for-byte (one is deliberately CRLF)
+test/fixtures/** -text
