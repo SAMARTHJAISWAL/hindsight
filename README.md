@@ -1,7 +1,7 @@
 # hindsight
 
 [![CI](https://github.com/SAMARTHJAISWAL/hindsight/actions/workflows/ci.yml/badge.svg)](https://github.com/SAMARTHJAISWAL/hindsight/actions/workflows/ci.yml)
-[![Make your card](https://img.shields.io/badge/make-your%20card-ff5fa2)](https://samarthjaiswal.github.io/hindsight/)
+[![Make your card](https://img.shields.io/badge/make-your%20card-ff5fa2)](https://hindsight-lilac-beta.vercel.app/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **Your year in the terminal.** It shows your top commands, your favourite typo, the hour you're busiest, and your terminal personality, then turns them into a card you can share. It's all computed on your machine from your shell history.
@@ -12,7 +12,7 @@ npx github:SAMARTHJAISWAL/hindsight
 
 You need Node 18 or newer. There's nothing to install and nothing to sign up for. It works with **zsh, bash, fish and PowerShell**.
 
-[![A hindsight card: 12,483 commands, top command git, favourite typo gti, peak hour 11 pm, The Git Whisperer](web/og.png)](https://samarthjaiswal.github.io/hindsight/)
+[![A hindsight card: 12,483 commands, top command git, favourite typo gti, peak hour 11 pm, The Git Whisperer](web/og.png)](https://hindsight-lilac-beta.vercel.app/)
 
 <sub>The card above uses made-up numbers.</sub>
 
@@ -73,7 +73,7 @@ There are eleven personalities, including the Git Whisperer, the Container Capta
 | `hindsight --file PATH --shell fish` | a specific history file |
 | `hindsight --json` | the numbers, as JSON |
 
-**No Node?** [Paste your history into the web page](https://samarthjaiswal.github.io/hindsight/) instead. It's processed in the browser tab, and the page tells you how to copy your history file on Mac, Linux and Windows.
+**No Node?** [Paste your history into the web page](https://hindsight-lilac-beta.vercel.app/) instead. It's processed in the browser tab, and the page tells you how to copy your history file on Mac, Linux and Windows.
 
 **No timestamps?** By default zsh and bash don't record when you ran each command. hindsight then recaps your whole history and leaves out the time-of-day stats. To get them next year, add `setopt EXTENDED_HISTORY` to `~/.zshrc`, or `HISTTIMEFORMAT="%F %T "` to `~/.bashrc`.
 

@@ -11,7 +11,7 @@ import { render } from "../src/terminal.js";
 import { pack } from "../src/share.js";
 
 const VERSION = "0.1.0";
-const SITE = "https://samarthjaiswal.github.io/hindsight/";
+const SITE = "https://hindsight-lilac-beta.vercel.app/";
 
 const USAGE = `hindsight: your year in the terminal
 
